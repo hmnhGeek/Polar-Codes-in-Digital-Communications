@@ -2,6 +2,12 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 
+'''
+    This script also generates BER plot for polar codes but in log scale.
+    simulate1() is used to find BER based on message length. simulate2() is
+    used to generate BER plot vs Eb/N0.
+'''
+
 # reliability sequence for 5G N=1024
 Q = np.array([1, 2, 3, 5, 9, 4, 6, 10, 7, 11, 13, 8, 12, 14, 15, 16])-1
 

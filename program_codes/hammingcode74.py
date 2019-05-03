@@ -3,6 +3,10 @@ import numpy as np
 from scipy.special import erfc
 import random
 
+'''
+    This script generates the BER vs. Eb/N0 plot for hamming code.
+'''
+
 codewords = {'0000':'0000000',
              '0001':'0001011',
              '0010':'0010110',

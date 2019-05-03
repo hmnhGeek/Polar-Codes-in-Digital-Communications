@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.31)  1 MAY 2019 23:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.31)  3 MAY 2019 23:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -289,30 +289,41 @@ File: matthew.png Graphic file (type png)
 <use matthew.png>
 Package pdftex.def Info: matthew.png  used on input line 116.
 (pdftex.def)             Requested size: 364.25684pt x 254.38588pt.
- [4 <./matthew.png>] (./untitled-1.aux) ) 
+<good_channels.png, id=34, 462.528pt x 346.896pt>
+File: good_channels.png Graphic file (type png)
+<use good_channels.png>
+Package pdftex.def Info: good_channels.png  used on input line 124.
+(pdftex.def)             Requested size: 223.09955pt x 167.32863pt.
+<bad_channels.png, id=35, 462.528pt x 346.896pt>
+File: bad_channels.png Graphic file (type png)
+<use bad_channels.png>
+Package pdftex.def Info: bad_channels.png  used on input line 128.
+(pdftex.def)             Requested size: 223.09955pt x 167.32863pt.
+ [4 <./matthew.png>] [5 <./good_channels.png> <./bad_channels.png>] (./untitled
+-1.aux) ) 
 Here is how much of TeX's memory you used:
- 2633 strings out of 494587
- 35912 string characters out of 6177759
+ 2643 strings out of 494587
+ 36115 string characters out of 6177759
  107772 words of memory out of 5000000
- 6237 multiletter control sequences out of 15000+600000
+ 6245 multiletter control sequences out of 15000+600000
  9670 words of font info for 35 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,7n,32p,486b,236s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on untitled-1.pdf (4 pages, 192436 bytes).
+ 41i,7n,32p,584b,277s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti10.pfb>
+Output written on untitled-1.pdf (5 pages, 269667 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 81 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
