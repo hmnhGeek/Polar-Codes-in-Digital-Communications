@@ -14,7 +14,7 @@ def home():
 def results():
     if request.method == 'POST':
         ebno = request.form['ebno']
-        R = request.form['rate']
+        R = 1
         message = request.form['msg']
 
         ebno = float(ebno)

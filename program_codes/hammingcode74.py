@@ -7,6 +7,7 @@ import random
     This script generates the BER vs. Eb/N0 plot for hamming code.
 '''
 
+# mapping table for hamming codes.
 codewords = {'0000':'0000000',
              '0001':'0001011',
              '0010':'0010110',
@@ -25,12 +26,15 @@ codewords = {'0000':'0000000',
              '1111':'1111111'
              }
 
+# swap the key value pairs of the above table.
 inv_code = dict(zip(codewords.values(), codewords.keys()))
 
+# this function returns the Q value..
 def Q(x):
     return 0.5*erfc(x*2**(-0.5))
 
 def voltage(bin_stream, high, low):
+    """ This function converts the binary symbols to voltages. """
     s = []
     for i in bin_stream:
         if i == 1:
@@ -45,6 +49,7 @@ def noise_variance(ebno, R):
 noise_variance = np.vectorize(noise_variance)
 
 def count(num):
+    """ This function counts the number of 1s in a string 'num'. """
     c = 0
     for i in num:
         if i == '1':
@@ -52,21 +57,23 @@ def count(num):
     return c
 
 def hard_decision(vector):
+    """ This function performs the hard decision on vector. """
     r = ''
     for i in vector:
         r += str(i)
 
-    distance = 1000
+    distance = 1000 #threshold distance.
     cap_val = 0000
-    for i in inv_code:
-        val = int(i, 2)^int(r, 2)
-        val = np.binary_repr(val, 8)
+    for i in inv_code: # use the hashing table and take hamming distance from each key.
+        val = int(i, 2)^int(r, 2) # XOR the vector and the hash key in decimal form.
+        val = np.binary_repr(val, 8) # convert the XOR to 8 bit binary.
         if count(val) < distance:
             distance = count(val)
             cap_val = i
-    return cap_val
+    return cap_val # return the minimum hamming distance obtained.
 
 def calc_ber(decision, message):
+    """ This function calculates the BER after comparing the hard decision with the original message. """
     message = [str(i) for i in message]
     message = ''.join(message)
     val = int(message, 2)^int(decision, 2)
@@ -84,6 +91,9 @@ def find_voltage(sequence):
     return np.array(l)
 
 def soft_decision(vector):
+    """ This function finds the soft decision. It uses dot product to find the distance
+        instead of using hamming distance.
+    """
     distance = -1000.0
     cap_val = 0
     for i in inv_code:
@@ -96,26 +106,32 @@ def soft_decision(vector):
     return cap_val
 
 def hamming(ebnodb):
-    R = 4.0/7.0
-    ebno = 10**(ebnodb*0.1)
+    R = 4.0/7.0 # hamming rate.
+    ebno = 10**(ebnodb*0.1) # convert dB to linear scale.
     variance = noise_variance(ebno, R)
     sigma = np.sqrt(1/(2*R*ebno))
 
     k, n = 4, 7
 
     msg = []
+
+    # create a random message
     for i in range(k):
         msg.append(random.choice([0,1]))
 
+    # the for loop above added 4 bits of message. Add 3 bits for parity now.
     msg.append((msg[0]+msg[1]+msg[2])%2)
     msg.append((msg[1]+msg[2]+msg[3])%2)
     msg.append((msg[0]+msg[1]+msg[3])%2)
 
+    # convert the message to voltages now.
     voltages = voltage(msg, -1, 1)
     noise = np.random.normal(0, variance, n)
 
+    # add AWGN to the voltages.
     r = voltages + noise
     r_cap = []
+    # retrieve back the symbols.
     for i in r:
         if i <= 0:
             r_cap.append(1)
@@ -145,4 +161,3 @@ def plot():
     plt.xlabel("Eb/No in dB")
     plt.ylabel("BER (linear scale)")
     plt.show()
-plot()
