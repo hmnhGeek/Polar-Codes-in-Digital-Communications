@@ -27,7 +27,16 @@ def polarize(N, bec_cap=0.5):
         i+=1
         capacities.append(sub_cap)
 
-    return capacities[-1]
+    keys = list(range(len(capacities[-1])+1)) # generate indexes for channels.
+    return dict(zip(keys, capacities[-1])) # zip the key-vals and return them.
+
+def reliability_sequence(N, bec_cap=0.5):
+    capacities = polarize(N, bec_cap) # generate the capacities
+    rel = sorted(capacities.items(), key=lambda x: x[1]) # sort them from bad to good.
+    seq = []
+    for i in rel:
+        seq.append(i[0]+1) # because indexing began from 0.
+    return seq[-1:-len(seq)-1:-1] # return them from good to bad.
 
 def matthew_effect_bad():
     n = np.arange(1, 10)
